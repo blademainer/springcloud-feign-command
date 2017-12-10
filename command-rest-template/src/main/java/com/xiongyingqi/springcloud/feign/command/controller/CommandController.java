@@ -20,8 +20,6 @@ import java.util.UUID;
 public class CommandController {
   private static final Logger logger = LoggerFactory.getLogger(CommandController.class);
 
-  @Autowired
-  private Command command;
 
   @GetMapping("/list")
   public ReturnResult list() {
@@ -29,7 +27,8 @@ public class CommandController {
     request.setId(UUID.randomUUID().toString());
     request.setCommand("list");
     request.setUser("controller");
-    ReturnResult result = command.execute(request);
+    RestTemplate restTemplate = new RestTemplate();
+    ReturnResult result = restTemplate.postForObject("http://127.0.0.1:10800/list/execute", request, ReturnResult.class);
     logger.info("Execute request: {} and returns result: {}", request, result);
     return result;
   }

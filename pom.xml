@@ -12,6 +12,7 @@
         <module>command-api</module>
         <module>command-consumer</module>
         <module>command-producer</module>
+        <module>command-rest-template</module>
     </modules>
 
     <properties>

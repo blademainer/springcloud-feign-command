@@ -16,7 +16,7 @@ public class ListCommand implements Command {
   private static final Logger logger = LoggerFactory.getLogger(ListCommand.class);
 
   public ReturnResult execute(Request request) {
-
+    logger.info("Execute request: {}", request);
     return ReturnResult.SUCCESS;
   }
 }

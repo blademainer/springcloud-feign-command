@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.xiongyingqi.springcloud.feign")
 @SpringBootApplication
 @EnableCircuitBreaker
-@EnableFeignClients
+@EnableFeignClients({"com.xiongyingqi.springcloud.feign"})
 public class Application {
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);

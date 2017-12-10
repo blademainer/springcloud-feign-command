@@ -1,8 +1,6 @@
 package com.xiongyingqi.springcloud.feign.command.vo;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * @author xiongyingqi
@@ -11,8 +9,12 @@ import lombok.ToString;
 @Data
 @ToString
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReturnResult {
   private String code;
   private String message;
   private String describe;
+
+  public static final ReturnResult SUCCESS = new ReturnResult("000", "SUCCESS", "SUCCESS");
 }

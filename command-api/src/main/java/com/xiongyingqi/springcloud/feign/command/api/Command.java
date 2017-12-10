@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author xiongyingqi
  * @since 2017/12/10
  */
-@FeignClient
+@FeignClient(name = "${app.command}")
 @RequestMapping({"/{command}", "/{app.command}"})
 public interface Command {
   @PostMapping("/execute")
